@@ -90,6 +90,8 @@ retify_project/
 └── README.md
 
 
-
+#### Deployment 
+Using render Deploy the app
+Deployment Link - https://rentify-lt0q.onrender.com
 
 
