@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+{% block title %}<h1>My Houses to Sell</h1>{% endblock %}
+
+{% block content %}
+
+<h1 class="my-4" style="text-align: center; color: #2c3e50;">Available My Houses for Sale</h1>
+<div class="row" style="display: flex; flex-wrap: wrap; justify-content: center;">
+    {% for house in houses %}
+    <div class="col-lg-4 col-md-6 mb-4" style="flex: 1 0 21%; margin: 10px; padding: 15px; max-width: 31%; box-sizing: border-box;">
+        <div class="card h-100" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <div class="card-body" style="background-color: #f8f9fa; padding: 20px;">
+                <h4 class="card-title" style="color: #34495e; font-weight: bold;">{{ house.name }}</h4>
+                <h5 style="color: #e74c3c;">${{ house.price }}</h5>
+                <p class="card-text" style="color: #7f8c8d;">{{ house.address }}</p>
+            </div>
+            <div class="card-footer" style="background-color: #ecf0f1; padding: 10px; text-align: center;">
+                <a href="{% url 'sell_house1' house.house_id %}" class="btn btn-primary" style="background-color: #3498db; border-color: #3498db;">Edit Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
